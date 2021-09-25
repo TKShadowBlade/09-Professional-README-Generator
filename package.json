@@ -1,0 +1,22 @@
+{
+  "name": "09-professional-readme-generator",
+  "version": "1.0.0",
+  "description": "Professional READMe Generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TKShadowBlade/09-Professional-READMe-Generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TKShadowBlade/09-Professional-READMe-Generator/issues"
+  },
+  "homepage": "https://github.com/TKShadowBlade/09-Professional-READMe-Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.1.5"
+  }
+}
