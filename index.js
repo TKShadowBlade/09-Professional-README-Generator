@@ -3,8 +3,8 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 //inquirer questions
-inquirer
-  .prompt([
+const questiohs = () =>
+inquirer.prompt([
     {
       type: 'input',
       message: 'What is the name of your application?',
@@ -35,6 +35,7 @@ inquirer
         message: 'Instructions for using your app:',
         name: 'usage',
       },
+      //List of licenses
     {
         type: 'list',
         message: 'What license are you using?',
@@ -51,6 +52,32 @@ inquirer
         message: 'Detail any testing instructions:',
         name: 'test',
     },
-  ])
-  
+  ]);
+
+  // Function for generating data for MD File
+  function createMD(data){
+    return `${data.title}
+    ## Table of Contents
+    1. [Description](#description)
+    2. [Installation](#installation)
+    3. [Usage](#usage)
+    4. [Contributing](#contribute)
+    5. [Tests](#test)
+    6. [Questions](#github)
+    ## Description
+        ${data.description}
+    ## Installation:
+        ${data.installation}
+    ## Usage:
+        ${data.usage}
+    ## Contributing:
+        ${data.contribute}
+    ## Tests:
+        ${data.test}
+    ## Questions:
+        If you have any questions, you can reach me via email at ${data.email},
+        or you can view my Github profile at ${data.github}.`
+  }
+
+
   
