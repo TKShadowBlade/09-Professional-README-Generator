@@ -3,8 +3,8 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 //inquirer questions
-const questions = () =>
-inquirer.prompt([
+const questions = [
+
     {
       type: 'input',
       message: 'What is the name of your application?',
@@ -52,12 +52,11 @@ inquirer.prompt([
         message: 'Detail any testing instructions:',
         name: 'test',
     },
-]);
+]
 
   // Function for generating data for MD File
   function createMD(data){
     return `${data.title}
-    ${renderLicenseBadge(license)}
     ## Table of Contents
     1. [Description](#description)
     2. [Installation](#installation)
@@ -77,21 +76,23 @@ inquirer.prompt([
         ${data.test}
     ## Questions:
         If you have any questions, you can reach me via email at ${data.email},
-        or you can view my Github profile at ${data.github}.`
+        or you can view my Github profile at github.com/${data.github}.`
   }
-  //function to generate the license badge
-  function renderLicenseBadge(license) {
+
+  /*function to generate the license badge
+  function renderLicenseBadge(data.license) {
     if (license !== 'None') {
       return `![GitHub license](https://img.shields.io/badge/license-${data.license}-blue.svg)`;
     }
     return '';
   }
+  */
 //function to create readme file
-questions().then((data)=>{
-let newFile = createMD(data);
+inquirer.prompt(questions).then((data)=> {
+    let newFile = createMD(data);
   fs.writeFile("./readme.md", newFile, (err)=>{
     if(err){
-        console.error;
+        return console.log(err);
     }
     console.log('File has been successfully created');
   })
