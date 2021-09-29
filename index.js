@@ -56,27 +56,29 @@ const questions = [
 
   // Function for generating data for MD File
   function createMD(data){
-    return `${data.title}
-    ## Table of Contents
-    1. [Description](#description)
-    2. [Installation](#installation)
-    3. [Usage](#usage)
-    4. [Contributing](#contribute)
-    5. [Tests](#test)
-    6. [Questions](#github)
-    ## Description
-        ${data.description}
-    ## Installation:
-        ${data.installation}
-    ## Usage:
-        ${data.usage}
-    ## Contributing:
-        ${data.contribute}
-    ## Tests:
-        ${data.test}
-    ## Questions:
-        If you have any questions, you can reach me via email at ${data.email},
-        or you can view my Github profile at github.com/${data.github}.`
+return `${data.title}
+## Licensing:
+[![license](https://img.shields.io/badge/license-${data.license}-orange)](https://shields.io)
+## Table of Contents
+1. [Description](#description)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Contributing](#contribute)
+5. [Tests](#test)
+6. [Questions](#github)
+## Description
+${data.description}
+## Installation:
+${data.installation}
+## Usage:
+${data.usage}
+## Contributing:
+${data.contribute}
+## Tests:
+${data.test}
+## Questions:
+If you have any questions, you can reach me via email at ${data.email},
+or you can view my Github profile at github.com/${data.github}.`
   }
 
   /*function to generate the license badge
